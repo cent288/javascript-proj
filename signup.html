@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signup - SSC Forum</title>
+  <link rel="stylesheet" href="styles.css"> <!-- navbar styles -->
+  <link rel="stylesheet" href="auth.css">   <!-- form styles -->
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="index.html" id="navbar__logo">
+        <img src="images/ssc-logo.jpg" alt="SSC Logo" class="logo-img"> SSC Forum
+      </a>
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+        <li class="navbar__item"><a href="events.html" class="navbar__links">Events</a></li>
+        <li class="navbar__item"><a href="about.html" class="navbar__links">About</a></li>
+        <li class="navbar__item"><a href="forum.html" class="navbar__links">Forum</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Signup Form -->
+  <div class="auth-wrapper">
+    <div class="auth-image-panel"></div>
+    <div class="auth-form-panel">
+      <h2>
+        <img src="images/ssc-logo.jpg" alt="Logo"> Sign Up
+      </h2>
+      <form id="signupForm">
+        <input type="text" id="signupName" placeholder="Full Name" required>
+        <input type="email" id="signupEmail" placeholder="Email" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p class="toggle-link">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </div>
+
+ 
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js"></script>
+
+<!-- Signup Script -->
+<script type="module" src="signup.js"></script>
+
+</body>
+</html>

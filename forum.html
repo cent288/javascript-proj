@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSPU SSC | Threads</title>
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Threads Page Styles -->
+  <link rel="stylesheet" href="forum.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="index.html" id="navbar__logo">
+      <img src="images/ssc-logo.jpg" alt="SSC Logo" class="logo-img"> SSC Forum
+    </a>
+      <ul class="navbar__menu">
+        <li><a href="index.html" class="navbar__links">Home</a></li>
+        <li><a href="events.html" class="navbar__links">Events</a></li>
+        <li><a href="about.html" class="navbar__links">About</a></li>
+        <li><a href="forum.html" class="navbar__links active">Forum</a></li>
+        <li class="navbar__btn">
+          <button id="logoutBtn" class="logout-btn">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- THREADS -->
+  <main class="threads-container">
+    <h2>📢 Community Threads</h2>
+
+    <!-- New Post -->
+    <div class="create-thread">
+      <textarea id="threadInput" placeholder="What's on your mind?"></textarea>
+      <button id="postThreadBtn">Post</button>
+    </div>
+
+    <!-- Thread List -->
+    <div class="thread-list" id="threadsList">
+      <p class="no-threads">Loading threads...</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 LSPU Supreme Student Council. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Firebase & Thread JS -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="forum.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSC Forum</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="index.html" id="navbar__logo">
+      <img src="images/ssc-logo.jpg" alt="SSC Logo" class="logo-img"> SSC Forum
+    </a>
+    <ul class="navbar__menu">
+  <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+  <li class="navbar__item"><a href="events.html" class="navbar__links">Events</a></li>
+  <li class="navbar__item"><a href="about.html" class="navbar__links">About Us</a></li>
+  <li class="navbar__item"><a href="forum.html" class="navbar__links">Forum</a></li>
+
+  <!-- Shown when NOT logged in -->
+<li class="navbar__item navbar__btn" id="loginNav">
+  <a href="login.html" class="button">Login</a>
+</li>
+<li class="navbar__item navbar__btn" id="signupNav">
+  <a href="signup.html" class="button">Signup</a>
+</li>
+
+<!-- Shown when LOGGED IN -->
+<li class="navbar__item navbar__btn" style="display:none;">
+  <a href="profile.html" id="navbarUser" class="button">Welcome</a>
+</li>
+
+<li class="navbar__item navbar__btn" style="display:none;">
+  <button id="logoutBtn" class="logout-btn">Logout</button>
+</li>
+
+<!-- Only for Admins -->
+<li class="navbar__item navbar__btn" style="display:none;">
+  <a href="admin-dashboard.html" id="adminLink" class="button">Admin</a>
+</li>
+
+
+      
+    </ul>
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- HIGHLIGHT BOX -->
+  <section class="highlight-box">
+    <h2>🌟 Highlight of the Week</h2>
+    <p>Join the SSC Forum to stay updated with campus activities and announcements!</p>
+  </section>
+
+  <!-- HIGHLIGHT SLIDER -->
+  <section class="highlight-slider-container">
+    <div class="highlight-slider" id="highlight-slider">
+      <div class="highlight-slide"><img src="images/day_of_democracy.jpg" alt="Highlight 1"></div>
+      <div class="highlight-slide"><img src="images/first_friday_mass.jpg" alt="Highlight 2"></div>
+      <div class="highlight-slide"><img src="images/gears.jpg" alt="Highlight 3"></div>
+      <div class="highlight-slide"><img src="images/suicide_prev.jpg" alt="Highlight 4"></div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTIONS -->
+  <section id="about" class="content-section">
+    <h2>About Us</h2>
+    <p>The Student Supreme Council represents the voice of students and organizes various activities for the campus community.</p>
+  </section>
+
+  <section id="events" class="content-section">
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li> 🎅 Christmas Day – December 25</li>
+      <li> 🎊 New Year's Eve – January 1</li>
+      <li> Birthday ni Lance – January 28</li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 SSC Forum. All rights reserved.</p>
+  </footer>
+  
+  <script type="module">
+  import { auth, db } from "firebase-config.js";
+
+  console.log("✅ Firebase connected:", auth, db);
+  </script>
+<!-- Auth state handler (global) -->
+<script type="module" src="authState.js"></script>
+
+<!-- Your page-specific script -->
+<script src="script.js"></script>
+</body>
+</html>

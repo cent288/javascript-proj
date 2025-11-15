@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Signup</title>
+</head>
+<body>
+  <h1>Login / Signup</h1>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button id="submitBtn">Login</button>
+  <p id="toggleText">Don’t have an account? <a href="#" id="toggleLink">Sign up</a></p>
+
+  <script type="module">
+    import { auth, db } from "./firebase.js";
+    import { createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+      from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+    import { setDoc, doc, getDoc } 
+      from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+    let isLogin = true;
+    const submitBtn = document.getElementById("submitBtn");
+    const toggleLink = document.getElementById("toggleLink");
+    const toggleText = document.getElementById("toggleText");
+
+    toggleLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      isLogin = !isLogin;
+      submitBtn.textContent = isLogin ? "Login" : "Sign Up";
+      toggleText.innerHTML = isLogin 
+        ? `Don’t have an account? <a href="#" id="toggleLink">Sign up</a>`
+        : `Already have an account? <a href="#" id="toggleLink">Login</a>`;
+    });
+
+    submitBtn.addEventListener("click", async () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        if (isLogin) {
+          const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
+          // Get role
+          const userDoc = await getDoc(doc(db, "users", userCredential.user.uid));
+          const role = userDoc.exists() ? userDoc.data().role : "user";
+
+          alert(`✅ Logged in as ${email} (role: ${role})`);
+          window.location.href = "index.html";
+        } else {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+          // Save user with default role "user"
+          await setDoc(doc(db, "users", userCredential.user.uid), {
+            email: email,
+            role: "user"
+          });
+
+          alert("✅ Account created!");
+          window.location.href = "index.html";
+        }
+      } catch (error) {
+        alert("❌ " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>

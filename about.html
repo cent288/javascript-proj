@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About LSPU SSC</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Global -->
+  <link rel="stylesheet" href="about.css">   <!-- Page specific -->
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="index.html" id="navbar__logo">
+        <img src="images/ssc-logo.jpg" alt="SSC Logo" class="logo-img"> SSC Forum
+      </a>
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+        <li class="navbar__item"><a href="events.html" class="navbar__links">Events</a></li>
+        <li class="navbar__item"><a href="about.html" class="navbar__links active">About Us</a></li>
+        <li class="navbar__item"><a href="forum.html" class="navbar__links">Forum</a></li>
+
+        <!-- Shown when NOT logged in -->
+<li class="navbar__item navbar__btn" id="loginNav">
+  <a href="login.html" class="button">Login</a>
+</li>
+<li class="navbar__item navbar__btn" id="signupNav">
+  <a href="signup.html" class="button">Signup</a>
+</li>
+
+ <!-- Shown when LOGGED IN -->
+<li class="navbar__item navbar__btn" style="display:none;">
+  <a href="profile.html" id="navbarUser" class="button">Welcome</a>
+</li>
+
+<li class="navbar__item navbar__btn" style="display:none;">
+  <button id="logoutBtn" class="logout-btn">Logout</button>
+</li>
+
+
+
+  <!-- Only for Admins -->
+  <li class="navbar__item"><a href="admin-dashboard.html" id="adminLink" class="navbar__links" style="display:none;">Admin</a></li>
+</ul>
+
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section class="content-section">
+    <div class="about-card">
+      <h1>About LSPU Supreme Student Council</h1>
+      <p>
+        The <strong>Supreme Student Council (SSC)</strong> of 
+        <strong>Laguna State Polytechnic University (LSPU)</strong> is the 
+        highest governing student body that represents the voice of the students.
+      </p>
+      <p>
+        We are committed to promoting leadership, service, and academic excellence.  
+        Our mission is to build a bridge between the administration and the 
+        student body, ensuring that every student’s welfare, rights, and needs 
+        are heard and addressed.
+      </p>
+      <p>
+        Through various programs, activities, and initiatives, the LSPU SSC fosters 
+        student engagement, strengthens unity, and upholds the values of integrity, 
+        inclusivity, and responsibility.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+<section class="content-section">
+  <div class="team-card">
+    <h2>Our Leaders</h2>
+    <div class="team-members">
+      
+      <div class="member">
+        <img src="images/gun-rain.jpeg" alt="SSC President" class="avatar-img">
+        <h3>President</h3>
+        <p>Leads the SSC and represents the student body.</p>
+      </div>
+
+      <div class="member">
+        <img src="images/vice-president.jpg" alt="SSC Vice President" class="avatar-img">
+        <h3>Vice President</h3>
+        <p>Supports the president and manages projects.</p>
+      </div>
+
+      <div class="member">
+        <img src="images/secretary.jpg" alt="SSC Secretary" class="avatar-img">
+        <h3>Secretary</h3>
+        <p>Maintains records and communication.</p>
+      </div>
+
+      <div class="member">
+        <img src="images/treasurer.jpg" alt="SSC Treasurer" class="avatar-img">
+        <h3>Treasurer</h3>
+        <p>Manages funds and ensures transparency.</p>
+      </div>
+
+      <div class="member">
+        <img src="images/auditor.jpg" alt="SSC Auditor" class="avatar-img">
+        <h3>Auditor</h3>
+        <p>Oversees accountability and financial integrity.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 LSPU Supreme Student Council. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

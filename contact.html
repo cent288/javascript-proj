@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - SSC Forum</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Navbar styles -->
+  <link rel="stylesheet" href="contact.css"> <!-- Contact page styles -->
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="index.html" id="navbar__logo">
+        <img src="images/ssc-logo.jpg" alt="SSC Logo" class="logo-img"> SSC Forum
+      </a>
+      <ul class="navbar__menu">
+  <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+  <li class="navbar__item"><a href="events.html" class="navbar__links">Events</a></li>
+  <li class="navbar__item"><a href="about.html" class="navbar__links">About Us</a></li>
+  <li class="navbar__item"><a href="contact.html" class="navbar__links">Contact</a></li>
+
+   <!-- Shown when NOT logged in -->
+<li class="navbar__item navbar__btn" id="loginNav">
+  <a href="login.html" class="button">Login</a>
+</li>
+<li class="navbar__item navbar__btn" id="signupNav">
+  <a href="signup.html" class="button">Signup</a>
+</li>s
+
+  <!-- Shown when LOGGED IN -->
+<li class="navbar__item navbar__btn" style="display:none;">
+  <a href="profile.html" id="navbarUser" class="button">Welcome</a>
+</li>
+
+<li class="navbar__item navbar__btn" style="display:none;">
+  <button id="logoutBtn" class="logout-btn">Logout</button>
+</li>
+
+  <li class="navbar__item"><a href="admin-dashboard.html" id="adminLink" class="navbar__links" style="display:none;">Admin</a></li>
+</ul>
+
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="contact-wrapper">
+    <div class="contact-form-panel">
+      <h2>Contact Us</h2>
+      <p>Have questions or suggestions? Fill out the form and we’ll get back to you!</p>
+      <form id="contactForm">
+        <input type="text" id="contactName" placeholder="Full Name" required>
+        <input type="email" id="contactEmail" placeholder="Email" required>
+        <textarea id="contactMessage" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 SSC Forum. All rights reserved.</p>
+  </footer>
+  <script type="module" src="authState.js"></script>
+
+</body>
+</html>

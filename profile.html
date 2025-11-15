@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+
+  <!-- Global styles first -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Profile-specific styles second -->
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="index.html" id="navbar__logo">
+        <img src="images/ssc-logo.jpg" alt="SSC Logo" class="logo-img"> SSC Forum
+      </a>
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+        <li class="navbar__item"><a href="events.html" class="navbar__links">Events</a></li>
+        <li class="navbar__item"><a href="about.html" class="navbar__links">About</a></li>
+        <li class="navbar__item"><a href="forum.html" class="navbar__links">Forum</a></li>
+
+        <!-- Show logged-in user -->
+        <li class="navbar__item"><span id="navbarUser" style="display:none;"></span></li>
+
+        <!-- Logout button -->
+        <li class="navbar__item"><button id="logoutBtn" class="logout-btn" style="display:none;">Logout</button></li>
+
+        <!-- Admin link -->
+        <li class="navbar__item"><a href="admin-dashboard.html" id="adminLink" class="navbar__links" style="display:none;">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Profile card -->
+  <div class="profile-card">
+    <h2>👤 Profile</h2>
+    <p><strong>Name:</strong> <span id="profileName"></span></p>
+    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+    <p><strong>Role:</strong> <span id="profileRole"></span></p>
+  </div>
+
+  <!-- Update Profile -->
+  <div class="profile-update">
+    <h3>Update Profile</h3>
+    <form id="profileForm">
+      <input type="text" id="newName" placeholder="New Name">
+      <input type="password" id="newPassword" placeholder="New Password">
+      <button type="submit">Update</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="auth.js"></script>
+</body>
+</html>

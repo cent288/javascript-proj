@@ -1,0 +1,330 @@
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #1b0000;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 30px;
+}
+#navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  background: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#navbar__logo .logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  background: #fff;
+  padding: 1px;
+}
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 20px;
+}
+.navbar__item {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.navbar__links {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__links:hover { color: #f77062; }
+
+.navbar__btn {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__btn .button {
+  background: #f77062;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.navbar__btn .button:hover {
+  background: #4837ff;
+  transform: translateY(-2px);
+}
+
+/* Logged-in user pill */
+#navbarUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(to right, #f77062, #ffb199);
+  padding: 0 20px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+#navbarUser:hover {
+  background: #4837ff;
+  transform: translateY(-2px);
+}
+
+/* ADMIN DASHBOARD */
+.admin-dashboard {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+#adminWelcome {
+  color: #f77062;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.btn-logout {
+  background: #f77062;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-logout:hover { background: #d95b50; }
+
+/* Floating Box */
+.floating-box {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+/* USER TABLE */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.user-table th, .user-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+.user-table th {
+  background: linear-gradient(to right, #f77062, #ffb199);
+  color: #fff;
+  font-weight: bold;
+}
+.user-table tr:nth-child(even) { background: #f9f9f9; }
+.user-table tr:hover { background: #ffeaea; }
+
+/* HAMBURGER */
+.navbar__toggle { display: none; cursor: pointer; }
+.navbar__toggle .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background: #f77062;
+  transition: 0.3s;
+}
+
+/* MOBILE MENU */
+@media screen and (max-width: 960px) {
+  .navbar__menu {
+    flex-direction: column;
+    background: #131313;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .navbar__menu.active { max-height: 300px; }
+  .navbar__toggle { display: block; }
+  .navbar__item { text-align: center; }
+}
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  background: linear-gradient(135deg, #f77062, #ffb199);
+  color: #fff;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* SLIDER */
+.highlight-slider-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.highlight-slider {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+.highlight-slide {
+  flex: 0 0 calc(50% - 0.5rem);
+  border-radius: 12px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.highlight-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* CONTENT SECTIONS */
+.content-section {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.content-section h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+.footer {
+  background: #1b0000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+
+/* Logout Button */
+.logout-btn {
+  background-color: #e63946;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.logout-btn:hover {
+  background-color: #d62828;
+  transform: scale(1.05);
+}
+.logout-btn:active { transform: scale(0.95); }
+
+/* THREADS MANAGEMENT */
+.threads-tools {
+  margin: 2rem auto;
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  padding: 2rem;
+}
+.threads-tools h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #1b0000;
+  text-align: center;
+}
+.thread-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fafafa;
+}
+.thread-table thead {
+  background: linear-gradient(135deg, #f77062, #ffb199);
+  color: #fff;
+}
+.thread-table th,
+.thread-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.thread-table tr:last-child td { border-bottom: none; }
+.thread-table tbody tr:hover {
+  background: #ffeaea;
+  transition: 0.2s;
+}
+/* Delete button */
+.delete-btn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.delete-btn:hover {
+  background: #d62828;
+  transform: scale(1.05);
+}
+.delete-btn:active { transform: scale(0.95); }
+/* Highlight admin posts */
+.thread-table td.admin {
+  font-weight: bold;
+  color: #f77062;
+}
